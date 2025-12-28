@@ -1,20 +1,38 @@
 
 version: 2
+
 sources:
-  - name: tpch_db
-  	database: SNOWFLAKE_SAMPLE_DATA
+  - name: tpch_dbt
+    database: MY_DBT_OUTPUTS
     schema: TPCH_SF1
     tables:
-	    - name: customer
-	    description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
+      - name: customer
+        description: "weyre jhh"
+      - name: orders
+        description: "thhh"
+      - name: lineitem
+        description: "uohg"
+      - name: partsupp
+        description: "hfss"
+      - name: part
+        description: "hjkk"
+      - name: supplier
+        description: "dbt_after_session"
+      - name: nation
+        description: "where"
+      - name: region
+        description: "qtyu"
 
-	    columns:
-	      - name: custkey
-	        description: This is a unique identifier for a customer
-	        tests:
-	          - unique
-	          - not_null
-
-	      - name: name
-	        description: Information about customers name
+models:
+  - name: top_loyal_customers
+    description: "Identifies top loyal customers and where they live"
+    columns:
+      - name: c_custkey
+        description: "Unique identifier for each customer"
+      - name: c_name
+        description: "Calculated loyalty metric based on activity"
+      - name: total_orders
+        description: "Country-level location data"
+      - name: total_spent
+        description: "Country-level location data"
           
