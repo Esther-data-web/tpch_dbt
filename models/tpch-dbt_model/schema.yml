@@ -35,4 +35,53 @@ models:
         description: "Country-level location data"
       - name: total_spent
         description: "Country-level location data"
-          
+
+  - name: monthly_sales_summary
+    description: "Identifies the mnth with the highest sales"
+    columns:
+      - name: region
+        description: "Unique identifier for each customer region"
+      - name: order_month
+        description: "the specific month goods were ordered"
+      - name: total_sales
+        description: "total sales for all the months"
+      - name: num_order
+        description: "the nummber of orders made"
+
+  - name: product_sales_summary
+    description: "Identifies the mnth with the highest sales"
+    columns:
+      - name: p_partkey
+        description: "Unique identifier for each product"
+      - name: p_name
+        description: "the name of each product"
+      - name: p_type
+        description: "the prduct category/ type"
+      - name: revenue
+        description: "the revenue from each product"
+      - name: total_quantity
+        description: "the total quantity of each product sold"
+
+  - name: supplier_performance
+    description: "tracks suppliers performance"
+    columns:
+      - name: s_suppkey
+        description: "Unique identifier for supplier"
+      - name: s_name
+        description: "the name of each supplier"
+      - name: total_sales
+        description: "the total sales by each supplier"
+      - name: avg_discount
+        description: "the average discount given to each supplier"
+      - name: num_orders
+        description: "the total number of orders by each supplier"
+
+  - name: revenue_by_region_and_category
+    description: "tracks for every region and the product category"
+    columns:
+      - name: region
+        description: "region for each product type"
+      - name: product_type
+        description: "the product type"
+      - name: revenue
+        description: "the total revenue of product type in each region"       
